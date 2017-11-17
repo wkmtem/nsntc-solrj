@@ -5,7 +5,7 @@ import org.apache.solr.client.solrj.beans.Field;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * 忽略未知属性
+ * 反序列化时忽略未知字段
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Item {

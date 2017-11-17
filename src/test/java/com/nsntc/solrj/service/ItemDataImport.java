@@ -56,7 +56,7 @@ public class ItemDataImport {
         int page = 1;
         int pageSize = 0;
         do {
-            String jsonData = doGet(StringUtils.replace(url, "{page}", "" + page));
+            String jsonData = this.doGet(StringUtils.replace(url, "{page}", "" + page));
 
             JsonNode jsonNode = MAPPER.readTree(jsonData);
             ArrayNode rows = (ArrayNode) jsonNode.get("rows");
@@ -79,7 +79,7 @@ public class ItemDataImport {
      * @return
      * @throws Exception
      */
-    public String doGet(String url) throws Exception {
+    private String doGet(String url) throws Exception {
 
         // 创建Httpclient对象
         CloseableHttpClient httpclient = HttpClients.createDefault();
